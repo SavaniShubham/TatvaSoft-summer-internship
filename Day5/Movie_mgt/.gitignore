@@ -1,0 +1,44 @@
+# Ignore Visual Studio temporary files, build results, and user-specific files
+
+## Build results
+bin/
+obj/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Visual Studio Code
+.vscode/
+
+## VS local history and temporary storage
+.vs/
+
+## Debug and release configuration files
+*.dbmdl
+*.pdb
+*.cache
+*.log
+*.vsidx
+
+## IIS Express
+/.vs/config/
+
+## Windows image thumbnails
+Thumbs.db
+
+## Node modules (if you use npm)
+node_modules/
+
+## Environment variables
+.env
+
+## Others
+*.DS_Store
+*.exe
+*.dll
+*.tmp
+*.bak
+*.swp

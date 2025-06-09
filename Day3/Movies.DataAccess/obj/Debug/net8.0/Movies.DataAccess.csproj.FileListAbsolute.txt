@@ -1,0 +1,15 @@
+D:\tatvaSoft-summer-internship\Day3\Movies.DataAccess\bin\Debug\net8.0\Movies.DataAccess.deps.json
+D:\tatvaSoft-summer-internship\Day3\Movies.DataAccess\bin\Debug\net8.0\Movies.DataAccess.runtimeconfig.json
+D:\tatvaSoft-summer-internship\Day3\Movies.DataAccess\bin\Debug\net8.0\Movies.DataAccess.dll
+D:\tatvaSoft-summer-internship\Day3\Movies.DataAccess\bin\Debug\net8.0\Movies.DataAccess.pdb
+D:\tatvaSoft-summer-internship\Day3\Movies.DataAccess\obj\Debug\net8.0\Movies.DataAccess.csproj.AssemblyReference.cache
+D:\tatvaSoft-summer-internship\Day3\Movies.DataAccess\obj\Debug\net8.0\Movies.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\tatvaSoft-summer-internship\Day3\Movies.DataAccess\obj\Debug\net8.0\Movies.DataAccess.AssemblyInfoInputs.cache
+D:\tatvaSoft-summer-internship\Day3\Movies.DataAccess\obj\Debug\net8.0\Movies.DataAccess.AssemblyInfo.cs
+D:\tatvaSoft-summer-internship\Day3\Movies.DataAccess\obj\Debug\net8.0\Movies.DataAccess.csproj.CoreCompileInputs.cache
+D:\tatvaSoft-summer-internship\Day3\Movies.DataAccess\obj\Debug\net8.0\Movies.DataAccess.sourcelink.json
+D:\tatvaSoft-summer-internship\Day3\Movies.DataAccess\obj\Debug\net8.0\Movies.DataAccess.dll
+D:\tatvaSoft-summer-internship\Day3\Movies.DataAccess\obj\Debug\net8.0\refint\Movies.DataAccess.dll
+D:\tatvaSoft-summer-internship\Day3\Movies.DataAccess\obj\Debug\net8.0\Movies.DataAccess.pdb
+D:\tatvaSoft-summer-internship\Day3\Movies.DataAccess\obj\Debug\net8.0\Movies.DataAccess.genruntimeconfig.cache
+D:\tatvaSoft-summer-internship\Day3\Movies.DataAccess\obj\Debug\net8.0\ref\Movies.DataAccess.dll
