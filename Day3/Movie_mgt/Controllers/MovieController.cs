@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Movie_mgt.Services;
-using Movie_mgt.Models;
+using Movies.Services.Services;
 using System.Diagnostics.Eventing.Reader;
 using System.Security.Cryptography.X509Certificates;
+using Movies.DataAccess.Models;
 
 namespace Movie_mgt.Controllers
 {
@@ -11,17 +11,17 @@ namespace Movie_mgt.Controllers
     [ApiController]
     public class MovieController : ControllerBase
     {
-        public readonly Movieservices _movieservices;
+        public readonly MovieServices _movieServices;
 
-        public MovieController(Movieservices movieservices)
+        public MovieController(MovieServices movieservices)
         {
-            _movieservices = movieservices;
+            _movieServices = movieservices;
         }
 
         [HttpGet("GetallMovies")]
         public ActionResult<List<movie>> GetAllMovies()
         {
-            List<movie> movies = _movieservices.GetAllMovies();
+            List<movie> movies = _movieServices.GetAllMovies();
             if (movies == null || movies.Count == 0)
             {
                 return NotFound("No movies found.");
@@ -31,7 +31,7 @@ namespace Movie_mgt.Controllers
         [HttpGet("GetMovie")]
         public ActionResult<movie> GetMovie(int id)
         {
-            movie m = _movieservices.GetMovieById(id);
+            movie m = _movieServices.GetMovieById(id);
             if (m == null)
             {
                 return NotFound("Movie  not found.");
@@ -43,14 +43,14 @@ namespace Movie_mgt.Controllers
         public ActionResult AddMovie(movie m)
         {
 
-            _movieservices.AddMovie(m);
+            _movieServices.AddMovie(m);
             return Ok("Movie added successfully.");
         }
 
         [HttpPut]
         public ActionResult UpdateMovie(movie m)
         {
-            int movieUpdateStatus = _movieservices.UpdateMovie(m);
+            int movieUpdateStatus = _movieServices.UpdateMovie(m);
             if (movieUpdateStatus == -1)
             {
 
@@ -69,7 +69,7 @@ namespace Movie_mgt.Controllers
         [HttpDelete]
         public ActionResult DeleteMovie(int id)
         {
-            int deleteStatus = _movieservices.DeleteMovie(id);
+            int deleteStatus = _movieServices.DeleteMovie(id);
             if (deleteStatus == -1)
             {
                 return NotFound("Movie not found for deletion.");
@@ -84,6 +84,18 @@ namespace Movie_mgt.Controllers
             }
 
         }
+        [HttpGet("GetFilterMovies")]
+        public ActionResult<List<movie>> GetFilterMovies(String genre)
+        {
+            List<movie> FilterMovies = _movieServices.GetFilterMovies(genre);
+
+            if (FilterMovies == null || FilterMovies.Count == 0)
+            {
+                return NotFound("No movies found.");
+            }
+            return Ok(FilterMovies);
+        }
+
     }
 }
 

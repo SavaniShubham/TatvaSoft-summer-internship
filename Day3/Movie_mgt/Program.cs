@@ -1,24 +1,41 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.EntityFrameworkCore;
+using Movies.Services.Services;
+using Movies.DataAccess;
+using Movies.DataAccess.Repositories;
 
-// Add services to the container.
 
-builder.Services.AddControllers();
-builder.Services.AddSingleton<Movie_mgt.Services.Movieservices>();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+public class Program
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    private static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
+
+        // Add services to the container.
+
+        builder.Services.AddControllers();
+        builder.Services.AddScoped<MovieServices>();
+        builder.Services.AddDbContext<MovieDbContext>(db =>
+            db.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))); 
+        builder.Services.AddScoped<MovieRepository, MovieRepository>();
+
+        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
+
+        var app = builder.Build();
+
+        // Configure the HTTP request pipeline.
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
+
+        app.UseAuthorization();
+
+        app.MapControllers();
+
+        app.Run();
+    }
 }
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
